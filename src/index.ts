@@ -17,13 +17,14 @@ if (argv._.length === 0) {
 }
 
 const dir = argv._[0]
+const cwd = process.cwd()
 
 const app = express()
-app.use(express.static(resolve(__dirname, dir)))
+app.use(express.static(resolve(cwd, dir)))
 
 app.get('*', (_, res) => {
-  res.sendFile(resolve(__dirname, 'index.html'))
+  res.sendFile(resolve(cwd, 'index.html'))
 })
 
 app.listen(port)
-console.log(`Easy SPA server started on port :${port}`)
+console.log(`Easy SPA server started -\ndir: ${dir}\nurl: http://localhost:${port}`)
