@@ -23,7 +23,7 @@ const app = express()
 app.use(express.static(resolve(cwd, dir)))
 
 app.get('*', (_, res) => {
-  res.sendFile(resolve(cwd, 'index.html'))
+  res.sendFile(resolve(cwd, dir, 'index.html'))
 })
 
 app.listen(port)
