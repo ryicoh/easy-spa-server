@@ -19,11 +19,13 @@ if (argv._.length === 0) {
 const dir = argv._[0]
 const cwd = process.cwd()
 
+const main = argv.main as string || 'index.html'
+
 const app = express()
 app.use(express.static(resolve(cwd, dir)))
 
 app.get('*', (_, res) => {
-  res.sendFile(resolve(cwd, dir, 'index.html'))
+  res.sendFile(resolve(cwd, dir, main))
 })
 
 app.listen(port)
