@@ -4,8 +4,8 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  tags:
+    types: [push]
 
 jobs:
   build:
