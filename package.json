@@ -1,6 +1,6 @@
 {
   "name": "easy-spa-server",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Serves the output folder of SPA like `dist` on Webpack.",
   "main": "./build/index.js",
   "scripts": {
